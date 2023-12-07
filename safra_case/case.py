@@ -33,5 +33,3 @@ df_order = df_drop.orderBy("Nome", "Data")
 df_complete = df_order.withColumn("Saldo Diário", F.coalesce(F.last("Saldo Diário", True).over(window_spec), F.lit(0)))
 
 display(df_complete)
-
-
